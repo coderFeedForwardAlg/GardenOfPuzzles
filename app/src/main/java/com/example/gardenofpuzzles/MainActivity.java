@@ -53,11 +53,10 @@ public class MainActivity extends AppCompatActivity {
         // the positions that have gardens are 1,2,5,6,8
         //garden=puzzlecode(puzzletype); 1=1(Chess); 2=2(Fill Cup); 5=3(River); 6=4(Syllogism); 8=5(Truth)
 
-        // each button gets a switch statement to handle all positions
+            // each button gets a switch statement to handle all positions
         upButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 switch (positionNum) {
                     case 0:
                         break;
@@ -65,9 +64,13 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         positionNum = 0;
+                            // animator that takes a object that you want to move and a distance you want to be at as paramiters.
                         ObjectAnimator animatorY2 = ObjectAnimator.ofFloat(farmer, "y", 350f);
+                            // an animatiorSet
                         AnimatorSet animatiorSet2 = new AnimatorSet();
+                            // link the animatorSet and animator
                         animatiorSet2.playTogether( animatorY2);
+                            // start it
                         animatiorSet2.start();
                         puzzButton.setText("Check Stats");
                         break;
